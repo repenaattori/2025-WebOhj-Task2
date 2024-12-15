@@ -1,6 +1,5 @@
-
-const {readFile} =  require('fs/promises');
 const {checkProps} = require('./func');
+const {readFile} =  require('fs/promises')
 
 describe('Basic test', ()=>{
     it('Is text found', async ()=>{
@@ -9,9 +8,9 @@ describe('Basic test', ()=>{
         expect(text).toMatch(/@media/);        
         let mod = text.substring(text.indexOf('@media'));
         
-        checkProps('img', mod, 'display');
-        checkProps('img', mod, 'block');
-        checkProps('h1', mod, 'font-size');
-        checkProps('h1', mod, '3em');
+        checkProps('#content', mod, 'display');
+        checkProps('#content', mod, 'flex');
+        checkProps('#content', mod, 'justify-content');
+        checkProps('#content', mod, 'center');        
     })
 })
