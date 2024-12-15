@@ -6,8 +6,10 @@ describe('Basic test', ()=>{
     it('Is text found', async ()=>{
         const text = (await readFile('./style.css')).toString().toLocaleLowerCase();
     
-        expect(text).toMatch(/@media/);        
+        expect(text).toMatch(/@media /);       
+        expect(text).toMatch(/min-width/)
         let mod = text.substring(text.indexOf('@media'));
+
         
         checkProps('img', mod, 'display');
         checkProps('img', mod, 'block');
